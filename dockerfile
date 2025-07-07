@@ -1,3 +1,3 @@
 # Dockerfile
-FROM alpine
-CMD ["echo", "Hello from Docker image"]
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html
