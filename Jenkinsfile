@@ -8,8 +8,13 @@ pipeline {
             }
         }
         stage('Build') {
-                bat 'mvn clean package -DskipTests'
+    steps {
+        dir('my-java-app') {
+            bat 'mvn clean package -DskipTests'
+              }
+          }
         }
+
         stage('Test') {
             steps {
                 dir('my-java-app') {
