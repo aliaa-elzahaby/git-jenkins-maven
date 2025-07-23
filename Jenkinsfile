@@ -8,11 +8,7 @@ pipeline {
             }
         }
         stage('Build') {
-            steps {
-                dir('my-java-app') {        // <-- Change to the directory containing pom.xml
-                    bat 'mvn clean package -DskipTests'  // Use bat for Windows Jenkins agents
-                }
-            }
+                bat 'mvn clean package -DskipTests'
         }
         stage('Test') {
             steps {
